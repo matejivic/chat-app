@@ -6,12 +6,19 @@
 }
 
 .App-header {
-  background-color: #262626;
+  background-color: rgb(58, 98, 98);
   overflow: visible;
   width: 100%;
   text-align: center;
   color: white;
 }
+
+.Messages {
+  height: 100vh;
+  /* Replace with the desired height */
+  overflow-y: scroll;
+}
+
 
 .Messages-list {
   padding: 20px 0;
@@ -22,6 +29,8 @@
   padding-left: 0;
   flex-grow: 1;
   overflow: auto;
+  font-weight: 300;
+  overflow-y: scroll;
 }
 
 .Messages-message {
@@ -30,7 +39,6 @@
 }
 
 .Messages-message.currentMember {
-  /*justify-content: flex-end;*/
   flex-direction: row-reverse;
   text-align: right;
 }
@@ -44,11 +52,12 @@
 }
 
 .Messages-message>.avatar {
-  height: 35px;
-  width: 35px;
+  height: 39px;
+  width: 39px;
   border-radius: 50%;
   display: inline-block;
   margin: 0 10px -10px;
+  opacity: 0.6;
 }
 
 .Message-content>.username {
@@ -62,14 +71,10 @@
   padding: 10px;
   max-width: 400px;
   margin: 0;
-  border-radius: 12px;
-  background-color: cornflowerblue;
-  color: white;
+  color: #555;
   display: inline-block;
-}
+  border-radius: 12px;
 
-.currentMember>.Message-content .text {
-  background-color: orangered;
 }
 
 form {
@@ -84,14 +89,14 @@ input {
   padding: 5px;
   font-size: 16px;
   border-radius: 8px;
-  border: 1px solid orangered;
+  border: 1px solid rgb(58, 98, 98);
   flex-grow: 1;
 }
 
 button {
   padding: 5px 10px;
   font-size: 16px;
-  background-color: orangered;
+  background-color: rgb(58, 98, 98);
   color: white;
   border: none;
   border-radius: 8px;

@@ -1,13 +1,14 @@
 import { Component } from "react";
 import React from "react";
 
-class Input extends Component {
+export default class Input extends React.Component {
     state = {
-        text: ""
+        text: "",
+        user: this.props.user
     }
 
     onChange(e) {
-        this.setState({ text: e.target.value });
+        this.setState({ text: e.target.value.trimStart() });
     }
 
     onSubmit(e) {
@@ -20,7 +21,7 @@ class Input extends Component {
         const messages = this.state.messages
         messages.push({
             text: message,
-            member: this.state.member
+            user: this.state.user
         })
         this.setState({ messages: messages })
     }
@@ -33,14 +34,12 @@ class Input extends Component {
                         onChange={e => this.onChange(e)}
                         value={this.state.text}
                         type="text"
-                        placeholder="Enter your message and press ENTER"
-                        autofocus="true"
+                        placeholder="Enter your message here"
+                        autoFocus="true"
                     />
-                    <button>Send</button>
+                    <button disabled={!this.state.text}  >Send</button>
                 </form>
             </div>
         );
     }
 }
-
-export default Input;
